@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "RemoveRedLines",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "run_at" : "document_idle",
+            "matches" : [
+                "*://youtube.com/*"
+            ],
+            "match_about_blank" : true,
+            "js" : ["content-script.js"]
+
+        }
+    ],
+    "description": "Remove the red lines in Youtube watched videos.",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {},
+    "permissions": [
+        "activeTab", "tabs", "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ]
+  }
